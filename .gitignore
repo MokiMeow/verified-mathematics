@@ -7,6 +7,7 @@ output/
 runtime/
 *.pdf
 !paper/*.pdf
+!projects/**/paper/*.pdf
 *.zip
 *.log
 !evidence/*.log

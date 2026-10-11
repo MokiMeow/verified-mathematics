@@ -8,6 +8,7 @@ runtime/
 *.pdf
 !paper/*.pdf
 !projects/**/paper/*.pdf
+!projects/**/evidence/**/*.log
 *.zip
 *.log
 !evidence/*.log

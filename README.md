@@ -6,7 +6,7 @@ dependency pins, verification evidence, and research note.
 
 | Project | What is proved | Evidence | Status |
 | --- | --- | --- | --- |
-| [Reciprocal-product stability](projects/reciprocal-stability/README.md) | Two- and three-point quadratic deficit bounds with globally optimal coefficients; fixed-weight endpoint background | 57 audited Lean theorems, five modules replayed, recorded commands and SHA256 hashes | Locally verified on Windows; formal proof note, not peer reviewed; novelty unresolved |
+| [Reciprocal-product stability](projects/reciprocal-stability/README.md) | Two- and three-point quadratic deficit bounds with globally optimal coefficients; fixed-weight endpoint background | 57 audited Lean theorems, five modules replayed, recorded commands and SHA256 hashes | Locally verified on Windows and Linux; formal proof note, not peer reviewed; novelty unresolved |
 
 The source and evidence are in
 [`projects/reciprocal-stability/`](projects/reciprocal-stability/).
@@ -24,7 +24,7 @@ lake exe cache get
 lake build
 lake env lean Audit.lean
 lake env lean StabilityAudit.lean
-lake env leanchecker -v Kantorovich Kantorovich.Stability Kantorovich.ThreeCertificates Kantorovich.ThreeStability Kantorovich.Examples
+lake env lean -DwarningAsError=true SequentialReplay.lean
 python sanity_checks.py
 python stability_sanity.py
 ```

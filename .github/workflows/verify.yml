@@ -37,13 +37,7 @@ jobs:
           use-github-cache: false
 
       - name: Replay the five proof modules
-        run: >-
-          lake env leanchecker -v
-          Kantorovich
-          Kantorovich.Stability
-          Kantorovich.ThreeCertificates
-          Kantorovich.ThreeStability
-          Kantorovich.Examples
+        run: lake env lean -DwarningAsError=true SequentialReplay.lean
 
       - name: Print theorem axiom dependencies
         run: |

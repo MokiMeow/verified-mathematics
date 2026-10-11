@@ -1,0 +1,31 @@
+{
+  "platform": "Linux x86_64, Ubuntu24.04 Docker",
+  "lean_version": "4.34.0",
+  "lean_commit": "293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+  "mathlib_commit": "5ed2965256430c3649e86755f9576b54eca72435",
+  "source_release_commit": "b12a1129516f7cb7f80bb55a0b7e3c318a31696e",
+  "source_artifact_hashes_match": true,
+  "audited_theorem_count": 57,
+  "source_checks": [
+    "Kantorovich.lean",
+    "Kantorovich/Stability.lean",
+    "Kantorovich/ThreeCertificates.lean",
+    "Kantorovich/ThreeStability.lean",
+    "Kantorovich/Examples.lean"
+  ],
+  "kernel_replayed_modules": [
+    "Kantorovich",
+    "Kantorovich.Stability",
+    "Kantorovich.ThreeCertificates",
+    "Kantorovich.ThreeStability",
+    "Kantorovich.Examples"
+  ],
+  "replay_method": "Sequential calls to the bundled LeanChecker.replayFromImports function",
+  "successful_process_exit_code": 0,
+  "docker_memory_limit_bytes": 4107517952,
+  "earlier_simultaneous_replay": "Exceeded existing 4GB limit; successful sequential run shown here",
+  "log_sha256": "d126c4d4cdd33861cc68504e3e1a96476d34b35bbd40b7fd3e4ee64a46a7a23c",
+  "sequential_runner_sha256": "b6ddd75e6c5f40007e13c8eff804578b775ad2f8efa245aeee41c6f7888cf1fa",
+  "scope": "Local Linux verification of the unchanged original release. Hosted CI remains blocked. No second proof assistant, human review, novelty or journal claim.",
+  "runner_sha256": "7aaf555905be1745f5f4a9f792b1488cdc94531693c803393898456b90839eb0"
+}

@@ -105,7 +105,7 @@ lake build
 lake build Kantorovich Kantorovich.Stability Kantorovich.ThreeCertificates Kantorovich.ThreeStability Kantorovich.Examples
 lake env lean Audit.lean
 lake env lean StabilityAudit.lean
-lake env leanchecker -v Kantorovich Kantorovich.Stability Kantorovich.ThreeCertificates Kantorovich.ThreeStability Kantorovich.Examples
+lake env lean -DwarningAsError=true SequentialReplay.lean
 python sanity_checks.py
 python stability_sanity.py
 ```
@@ -114,6 +114,15 @@ The dependency lock is committed. `lakefile.toml` pins mathlib directly to
 `5ed2965256430c3649e86755f9576b54eca72435`; `lake-manifest.json` records all
 transitive revisions. The release evidence records the actual tool versions,
 commands, exit codes, source hashes, and output hashes.
+
+The original 57-theorem source was also checked locally on Linux x86_64 in
+Docker with the same pinned Lean and mathlib revisions. See
+`evidence/linux/verification.json` and the actual successful run log.
+`SequentialReplay.lean` invokes the bundled checker's `replayFromImports`
+function one module at a time; this completed within Docker's existing 4GB
+limit after simultaneous replay exceeded it. The theorem sources and original
+release evidence remain unchanged. Hosted CI remains blocked by the account's
+billing restriction; local Linux success is separate from hosted CI.
 
 ## Literature checked
 

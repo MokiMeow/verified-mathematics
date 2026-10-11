@@ -8,10 +8,10 @@ runtime/
 *.pdf
 !paper/*.pdf
 !projects/**/paper/*.pdf
-!projects/**/evidence/**/*.log
 *.zip
 *.log
 !evidence/*.log
+!projects/**/evidence/**/*.log
 householder1960.pdf
 lean-prior-art-search.json
 mathlib-prior-prs.json

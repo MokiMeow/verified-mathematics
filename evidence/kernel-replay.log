@@ -1,0 +1,8 @@
+Command: lake env leanchecker -v Kantorovich Kantorovich.Stability Kantorovich.ThreeCertificates Kantorovich.ThreeStability Kantorovich.Examples
+Started UTC: 2026-10-11T02:49:48.8210934Z
+replaying Kantorovich
+replaying Kantorovich.ThreeStability
+replaying Kantorovich.ThreeCertificates
+replaying Kantorovich.Stability
+replaying Kantorovich.Examples
+Exit code: 0

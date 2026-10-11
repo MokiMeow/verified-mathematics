@@ -1,0 +1,365 @@
+{
+  "recorded_at_utc": "2026-10-11T02:50:37.9559182Z",
+  "lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "lake_version": "Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)",
+  "python_version": "Python 3.14.0",
+  "platform": "Windows x86_64",
+  "mathlib_commit": "5ed2965256430c3649e86755f9576b54eca72435",
+  "mathlib_source_unmodified": true,
+  "theorem_count": 57,
+  "audited_theorem_names": [
+    "Kantorovich.chord_gap",
+    "Kantorovich.coordinate_endpoint",
+    "Kantorovich.endpoint_rounding_with_offsets",
+    "Kantorovich.endpoint_rounding",
+    "Kantorovich.endpoint_objective",
+    "Kantorovich.partition_identity",
+    "Kantorovich.exists_sharp_endpoint_partition",
+    "Kantorovich.mass_partition",
+    "Kantorovich.sharp_fixed_weight_bound",
+    "Kantorovich.weighted_kantorovich",
+    "Kantorovich.strict_if_no_balanced_partition",
+    "Kantorovich.two_weight_example",
+    "Kantorovich.two_weight_example_attained",
+    "Kantorovich.two_weight_example_improves_classical",
+    "Kantorovich.endpoint_mem_interval",
+    "Kantorovich.classical_attainment_iff_balanced",
+    "TwoPointKantorovich.distanceSq_nonneg",
+    "TwoPointKantorovich.distanceSq_symm",
+    "TwoPointKantorovich.distanceSq_of_le",
+    "TwoPointKantorovich.sorted_certificate",
+    "TwoPointKantorovich.sorted_scalar_bound",
+    "TwoPointKantorovich.scalar_stability",
+    "TwoPointKantorovich.deficit_identity",
+    "TwoPointKantorovich.sharp_stability",
+    "TwoPointKantorovich.opposite_endpoints_attain",
+    "TwoPointKantorovich.coefficient_optimal",
+    "TwoPointKantorovich.optimal_coefficient_iff",
+    "TwoPointKantorovich.distanceSq_eq_zero_iff",
+    "TwoPointKantorovich.product_eq_optimum_iff",
+    "TwoPointKantorovich.near_optimal_distance",
+    "ThreePointKantorovich.lower_cone_0",
+    "ThreePointKantorovich.lower_cone_1",
+    "ThreePointKantorovich.lower_cone_2",
+    "ThreePointKantorovich.reflectedUpper_cone_0",
+    "ThreePointKantorovich.reflectedUpper_cone_1",
+    "ThreePointKantorovich.reflectedUpper_cone_2",
+    "ThreePointKantorovich.distanceSq_nonneg",
+    "ThreePointKantorovich.distanceSq_swap_xy",
+    "ThreePointKantorovich.distanceSq_swap_yz",
+    "ThreePointKantorovich.product_swap_xy",
+    "ThreePointKantorovich.product_swap_yz",
+    "ThreePointKantorovich.lower_cone_cover",
+    "ThreePointKantorovich.lower_numerator_nonneg",
+    "ThreePointKantorovich.reflected_upper_numerator_nonneg",
+    "ThreePointKantorovich.upper_numerator_nonneg",
+    "ThreePointKantorovich.lower_gap_identity",
+    "ThreePointKantorovich.upper_gap_identity",
+    "ThreePointKantorovich.sorted_stability",
+    "ThreePointKantorovich.sharp_stability",
+    "ThreePointKantorovich.distanceSq_lower_corner",
+    "ThreePointKantorovich.lower_corner_deficit",
+    "ThreePointKantorovich.coefficient_optimal",
+    "ThreePointKantorovich.optimal_coefficient_iff",
+    "ThreePointKantorovich.endpoints_attain",
+    "ReciprocalStabilityExamples.two_lower_corner",
+    "ReciprocalStabilityExamples.three_lower_corner",
+    "ReciprocalStabilityExamples.three_midpoint_equality"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "kernel_replayed_modules": [
+    "Kantorovich",
+    "Kantorovich.Stability",
+    "Kantorovich.ThreeCertificates",
+    "Kantorovich.ThreeStability",
+    "Kantorovich.Examples"
+  ],
+  "commands": [
+    {
+      "name": "default_build",
+      "command": "lake",
+      "arguments": [
+        "build"
+      ],
+      "started_at_utc": "2026-10-11T02:48:36.1641308Z",
+      "ended_at_utc": "2026-10-11T02:48:38.9371511Z",
+      "exit_code": 0,
+      "log": "evidence/build.log"
+    },
+    {
+      "name": "fresh_background_source",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Kantorovich.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:48:38.9449946Z",
+      "ended_at_utc": "2026-10-11T02:48:47.4962977Z",
+      "exit_code": 0,
+      "log": "evidence/fresh-background.log"
+    },
+    {
+      "name": "fresh_two_point_source",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Kantorovich/Stability.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:48:47.4975726Z",
+      "ended_at_utc": "2026-10-11T02:48:55.4367488Z",
+      "exit_code": 0,
+      "log": "evidence/fresh-two-point.log"
+    },
+    {
+      "name": "fresh_certificates_source",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Kantorovich/ThreeCertificates.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:48:55.4378065Z",
+      "ended_at_utc": "2026-10-11T02:49:21.1648622Z",
+      "exit_code": 0,
+      "log": "evidence/fresh-certificates.log"
+    },
+    {
+      "name": "fresh_three_point_source",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Kantorovich/ThreeStability.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:49:21.1659445Z",
+      "ended_at_utc": "2026-10-11T02:49:29.0305893Z",
+      "exit_code": 0,
+      "log": "evidence/fresh-three-point.log"
+    },
+    {
+      "name": "fresh_examples_source",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Kantorovich/Examples.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:49:29.0315485Z",
+      "ended_at_utc": "2026-10-11T02:49:35.7627122Z",
+      "exit_code": 0,
+      "log": "evidence/fresh-examples.log"
+    },
+    {
+      "name": "background_axiom_audit",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Audit.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:49:35.7635774Z",
+      "ended_at_utc": "2026-10-11T02:49:42.3465361Z",
+      "exit_code": 0,
+      "log": "evidence/axioms-background.log"
+    },
+    {
+      "name": "stability_axiom_audit",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "StabilityAudit.lean"
+      ],
+      "started_at_utc": "2026-10-11T02:49:42.3474214Z",
+      "ended_at_utc": "2026-10-11T02:49:48.8200977Z",
+      "exit_code": 0,
+      "log": "evidence/axioms-stability.log"
+    },
+    {
+      "name": "targeted_kernel_replay",
+      "command": "lake",
+      "arguments": [
+        "env",
+        "leanchecker",
+        "-v",
+        "Kantorovich",
+        "Kantorovich.Stability",
+        "Kantorovich.ThreeCertificates",
+        "Kantorovich.ThreeStability",
+        "Kantorovich.Examples"
+      ],
+      "started_at_utc": "2026-10-11T02:49:48.8210934Z",
+      "ended_at_utc": "2026-10-11T02:50:17.911941Z",
+      "exit_code": 0,
+      "log": "evidence/kernel-replay.log"
+    },
+    {
+      "name": "exact_background_sanity",
+      "command": "python",
+      "arguments": [
+        "sanity_checks.py"
+      ],
+      "started_at_utc": "2026-10-11T02:50:17.9130117Z",
+      "ended_at_utc": "2026-10-11T02:50:18.0795973Z",
+      "exit_code": 0,
+      "log": "evidence/sanity-background.log"
+    },
+    {
+      "name": "exact_stability_sanity",
+      "command": "python",
+      "arguments": [
+        "stability_sanity.py"
+      ],
+      "started_at_utc": "2026-10-11T02:50:18.0805267Z",
+      "ended_at_utc": "2026-10-11T02:50:18.2931456Z",
+      "exit_code": 0,
+      "log": "evidence/sanity-stability.log"
+    }
+  ],
+  "background_sanity": {
+    "exact_grid_checks": 2733,
+    "weight_vectors": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        1,
+        3,
+        7,
+        9
+      ]
+    ],
+    "intervals": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "4"
+      ],
+      [
+        "2/3",
+        "7/2"
+      ]
+    ],
+    "grid_points_per_coordinate": 5,
+    "example_weights": [
+      1,
+      2
+    ],
+    "m": "1",
+    "M": "4",
+    "sharp_product": "27/2",
+    "classical_product_bound": "225/16",
+    "proof_status": "sanity only; infinite theorem requires Lean"
+  },
+  "stability_sanity": {
+    "two_point_checks": 1296,
+    "three_point_checks": 2916,
+    "intervals": [
+      [
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "4"
+      ],
+      [
+        "2/3",
+        "7/2"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "two_point_weight_pairs": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "2"
+      ],
+      [
+        "1/3",
+        "2/3"
+      ]
+    ],
+    "grid_points_per_coordinate": 9,
+    "method": "Fixed-grid exact rational checks of a separate Python restatement, not validation of Lean statement fidelity.",
+    "midpoint_stability_equality_verified": true,
+    "scope": "Sanity only; generality and coefficient optimality proved in Lean."
+  },
+  "sha256": {
+    "Kantorovich.lean": "d9796108ffc86dc866b5c5142e24ba0f836629d3be61d631d050f2ad6051364a",
+    "Kantorovich/Stability.lean": "957ee9d634496a1adab23d534a6cd27a4620292ff309c33f318ee2928701673e",
+    "Kantorovich/ThreeCertificates.lean": "62d284adc9f3b1eaec94eee81dc344182b970004212f80fde9566e0b9307b177",
+    "Kantorovich/ThreeStability.lean": "591aa8080d2a800d41a4eeab852c440bd9806f1ab71afd64e9a59378366cdb35",
+    "Kantorovich/Examples.lean": "d32e566a65c174b56849d9d0bd2fad341e48baafe7d4e83d62494559b6e6aaf6",
+    "Audit.lean": "ed4c63099a908b78e7a885a622a0f512925e61e395326ff908b0e10ffda065e5",
+    "StabilityAudit.lean": "f78a02085e259627ba0936fde2be6647dd6b7891dd6274c07910b4cee1b45dfd",
+    "lakefile.toml": "0b3cd33171191a6030e8510ec30f425e946d7a67e21d84bad9e6b0b69f129413",
+    "lake-manifest.json": "cec9147c619f73fe89c24e1a90e7f488f5ce5db0d39ae766c7496a0a8c1b3d70",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "reciprocal-stability.tex": "625106500b4a3657671be9698e3e26ea614edc9385912bbf63b545dc3480b15e",
+    "paper/reciprocal-stability.pdf": "974427ecfd457eebdfc1fa5a405976ff3ce6461719b40167ee119fff8518803e",
+    "sanity_checks.py": "56142ca45ea7602b39f20d4b654cd8fa0a967fceef0a8101262b40bbd7abad62",
+    "stability_sanity.py": "61ce64eaa74d341a1f2fe0afca11b743d78b461edd8739a9d48291348cf18421",
+    "certificate_counts.py": "52f36ef9fadedcffdd000675d627e0036793fb490aef3630278b0941913e070b",
+    "verify.ps1": "fdb84f1d965b7859f94c1f5a5e50b186949d48a42503aa061bd08d2429271970",
+    "record_release_evidence.ps1": "2fc5a84de18b4a1666219639da69713531ad0dd81b82f9278c27346711b0ea14",
+    "evidence/commands.json": "4073bf9d50d739f981c79dc021eabd9191e3a0a89c9c8925198a4dd6c0cbdebd",
+    "evidence/certificate-counts.json": "78b9637e67566a964ecb5f6723cf0ad9853f524f146d98cfda37cc6eaf29e309",
+    "evidence/axioms-background.log": "72db4e62caafcdda6b25796e247f23c663da3fffa85c64a6ae4d3e1dc329335b",
+    "evidence/axioms-stability.log": "e51fdb3488e312577a21950e9afb2bad742d5b5c931072c52ec42b89c9154eb2",
+    "evidence/build.log": "9d4b64ca139d02f2f8f372924186e13ec11ffb31c1b15baf9dcbc15ce805652a",
+    "evidence/fresh-background.log": "a92bc07e0c1fed8e59a9fb3eafd7c967219bb19172d0a504ea465c829097f30e",
+    "evidence/fresh-certificates.log": "70a5c98e53d797bcf8f000af984f85305107e3e532e226967e440088fb5ec695",
+    "evidence/fresh-examples.log": "6e50d6ef057d012e54622ee77ee87a5377cb8523fffa9c092508b3dc74156abf",
+    "evidence/fresh-three-point.log": "198c123b71485b5062728d676e471911148a8f5ff34c67c95616570cf8921932",
+    "evidence/fresh-two-point.log": "912e5fcbe85709c3b7618b06cf23edc3b3527607b2412421ee001f6f73cab2da",
+    "evidence/kernel-replay.log": "48d475637c7dc77c20a0538626ed5318b93a323db0dc5546c52142fba533032f",
+    "evidence/sanity-background.log": "6538266b07de38c4de319861ef07a907aadb580b035d4a3866f6d1912230dfda",
+    "evidence/sanity-stability.log": "e15b24c3a0f107289e8bca3c76e52592e38a0fd300869c25c3d161144ae41eef"
+  },
+  "scope": "Lean formal statements and saved declarations, relative to imported mathlib and standard axioms; not journal acceptance, novelty certification, or a second independent proof assistant."
+}

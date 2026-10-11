@@ -1,0 +1,1 @@
+{"monomial_counts": {"lower_cone_0": 66, "lower_cone_1": 71, "lower_cone_2": 83, "reflectedUpper_cone_0": 89, "reflectedUpper_cone_1": 107, "reflectedUpper_cone_2": 115}, "sympy_version": "1.14.0", "scope": "Actual Lean RHS counts only; Lean ring and positivity verify the identities and signs."}

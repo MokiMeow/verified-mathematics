@@ -1,0 +1,4 @@
+Command: python stability_sanity.py
+Started UTC: 2026-10-11T02:50:18.0805267Z
+{"two_point_checks": 1296, "three_point_checks": 2916, "intervals": [["1", "2"], ["1", "4"], ["2/3", "7/2"], ["1", "1"]], "two_point_weight_pairs": [["0", "1"], ["1", "0"], ["1", "2"], ["1/3", "2/3"]], "grid_points_per_coordinate": 9, "method": "Fixed-grid exact rational checks of a separate Python restatement, not validation of Lean statement fidelity.", "midpoint_stability_equality_verified": true, "scope": "Sanity only; generality and coefficient optimality proved in Lean."}
+Exit code: 0

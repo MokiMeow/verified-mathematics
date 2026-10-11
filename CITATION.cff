@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this formal development, please cite this repository and its archived release."
+title: "Globally optimal quadratic deficit bounds for two- and three-point reciprocal products"
+type: software
+authors:
+  - given-names: Mohith
+date-released: 2026-10-11
+version: 1.0.0
+repository-code: "https://github.com/MokiMeow/reciprocal-stability"
+license: MIT

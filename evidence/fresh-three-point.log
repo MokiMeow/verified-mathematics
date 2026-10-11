@@ -1,0 +1,6 @@
+Command: lake env lean -DwarningAsError=true Kantorovich/ThreeStability.lean
+Started UTC: 2026-10-11T02:49:21.1659445Z
+'ThreePointKantorovich.sharp_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ThreePointKantorovich.coefficient_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ThreePointKantorovich.optimal_coefficient_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exit code: 0

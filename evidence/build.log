@@ -1,0 +1,26 @@
+Command: lake build
+Started UTC: 2026-10-11T02:48:36.1641308Z
+ℹ [1009/1014] Replayed Kantorovich
+info: Kantorovich.lean:297:0: 'Kantorovich.chord_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:298:0: 'Kantorovich.coordinate_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:299:0: 'Kantorovich.endpoint_rounding_with_offsets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:300:0: 'Kantorovich.sharp_fixed_weight_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:301:0: 'Kantorovich.weighted_kantorovich' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:302:0: 'Kantorovich.strict_if_no_balanced_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:356:0: 'Kantorovich.two_weight_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich.lean:357:0: 'Kantorovich.classical_attainment_iff_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1010/1014] Replayed Kantorovich.Stability
+info: Kantorovich/Stability.lean:200:0: 'TwoPointKantorovich.sorted_scalar_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:201:0: 'TwoPointKantorovich.scalar_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:202:0: 'TwoPointKantorovich.sharp_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:203:0: 'TwoPointKantorovich.coefficient_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:204:0: 'TwoPointKantorovich.optimal_coefficient_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:205:0: 'TwoPointKantorovich.distanceSq_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:206:0: 'TwoPointKantorovich.product_eq_optimum_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/Stability.lean:207:0: 'TwoPointKantorovich.near_optimal_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1012/1014] Replayed Kantorovich.ThreeStability
+info: Kantorovich/ThreeStability.lean:212:0: 'ThreePointKantorovich.sharp_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/ThreeStability.lean:213:0: 'ThreePointKantorovich.coefficient_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kantorovich/ThreeStability.lean:214:0: 'ThreePointKantorovich.optimal_coefficient_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1014 jobs).
+Exit code: 0

@@ -1,0 +1,3 @@
+Command: lake env lean -DwarningAsError=true Kantorovich/ThreeCertificates.lean
+Started UTC: 2026-10-11T02:48:55.4378065Z
+Exit code: 0

@@ -1,0 +1,11 @@
+Command: lake env lean -DwarningAsError=true Kantorovich.lean
+Started UTC: 2026-10-11T02:48:38.9449946Z
+'Kantorovich.chord_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.coordinate_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.endpoint_rounding_with_offsets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.sharp_fixed_weight_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.weighted_kantorovich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.strict_if_no_balanced_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.two_weight_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kantorovich.classical_attainment_iff_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exit code: 0

@@ -1,0 +1,151 @@
+[
+  {
+    "name": "default_build",
+    "command": "lake",
+    "arguments": [
+      "build"
+    ],
+    "started_at_utc": "2026-10-11T02:48:36.1641308Z",
+    "ended_at_utc": "2026-10-11T02:48:38.9371511Z",
+    "exit_code": 0,
+    "log": "evidence/build.log"
+  },
+  {
+    "name": "fresh_background_source",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "Kantorovich.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:48:38.9449946Z",
+    "ended_at_utc": "2026-10-11T02:48:47.4962977Z",
+    "exit_code": 0,
+    "log": "evidence/fresh-background.log"
+  },
+  {
+    "name": "fresh_two_point_source",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "Kantorovich/Stability.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:48:47.4975726Z",
+    "ended_at_utc": "2026-10-11T02:48:55.4367488Z",
+    "exit_code": 0,
+    "log": "evidence/fresh-two-point.log"
+  },
+  {
+    "name": "fresh_certificates_source",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "Kantorovich/ThreeCertificates.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:48:55.4378065Z",
+    "ended_at_utc": "2026-10-11T02:49:21.1648622Z",
+    "exit_code": 0,
+    "log": "evidence/fresh-certificates.log"
+  },
+  {
+    "name": "fresh_three_point_source",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "Kantorovich/ThreeStability.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:49:21.1659445Z",
+    "ended_at_utc": "2026-10-11T02:49:29.0305893Z",
+    "exit_code": 0,
+    "log": "evidence/fresh-three-point.log"
+  },
+  {
+    "name": "fresh_examples_source",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "Kantorovich/Examples.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:49:29.0315485Z",
+    "ended_at_utc": "2026-10-11T02:49:35.7627122Z",
+    "exit_code": 0,
+    "log": "evidence/fresh-examples.log"
+  },
+  {
+    "name": "background_axiom_audit",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "Audit.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:49:35.7635774Z",
+    "ended_at_utc": "2026-10-11T02:49:42.3465361Z",
+    "exit_code": 0,
+    "log": "evidence/axioms-background.log"
+  },
+  {
+    "name": "stability_axiom_audit",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "lean",
+      "-DwarningAsError=true",
+      "StabilityAudit.lean"
+    ],
+    "started_at_utc": "2026-10-11T02:49:42.3474214Z",
+    "ended_at_utc": "2026-10-11T02:49:48.8200977Z",
+    "exit_code": 0,
+    "log": "evidence/axioms-stability.log"
+  },
+  {
+    "name": "targeted_kernel_replay",
+    "command": "lake",
+    "arguments": [
+      "env",
+      "leanchecker",
+      "-v",
+      "Kantorovich",
+      "Kantorovich.Stability",
+      "Kantorovich.ThreeCertificates",
+      "Kantorovich.ThreeStability",
+      "Kantorovich.Examples"
+    ],
+    "started_at_utc": "2026-10-11T02:49:48.8210934Z",
+    "ended_at_utc": "2026-10-11T02:50:17.9119410Z",
+    "exit_code": 0,
+    "log": "evidence/kernel-replay.log"
+  },
+  {
+    "name": "exact_background_sanity",
+    "command": "python",
+    "arguments": [
+      "sanity_checks.py"
+    ],
+    "started_at_utc": "2026-10-11T02:50:17.9130117Z",
+    "ended_at_utc": "2026-10-11T02:50:18.0795973Z",
+    "exit_code": 0,
+    "log": "evidence/sanity-background.log"
+  },
+  {
+    "name": "exact_stability_sanity",
+    "command": "python",
+    "arguments": [
+      "stability_sanity.py"
+    ],
+    "started_at_utc": "2026-10-11T02:50:18.0805267Z",
+    "ended_at_utc": "2026-10-11T02:50:18.2931456Z",
+    "exit_code": 0,
+    "log": "evidence/sanity-stability.log"
+  }
+]

@@ -1,0 +1,260 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\usepackage{xurl}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\dist}{\operatorname{dist}}
+\title{Globally optimal quadratic deficit bounds for two- and three-point reciprocal products}
+\author{Mohith (MokiMeow)}
+\date{11 October 2026\\\small Formal proof note; not peer reviewed}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give machine-checked proofs of quadratic error bounds with optimal global coefficients for
+the product of a sum and a reciprocal sum on a positive interval. In the
+two-point weighted problem, the optimal coefficient for squared Euclidean
+distance to the two maximizing endpoint pairs is $pq/(mM)$. In the
+unweighted three-point problem, the optimal coefficient for distance to
+the six endpoint triples with one or two upper endpoints is $2/(mM)$. The three-point proof uses
+six positive-polynomial certificates and an explicit covering of the
+ordered domain. A Lean development also verifies the classical exact
+fixed-weight partition formula as background. All formal theorems are
+proved without unfinished proof placeholders or additional axioms.
+The present note records verified statements and proofs; first-publication
+priority and editorial novelty are not claimed.
+\end{abstract}
+
+\section{Setting and relation to classical results}
+Throughout, $0<m<M$ and every input belongs to $[m,M]$. The classical
+Kantorovich inequality bounds
+\[
+ \left(\sum_i w_i x_i\right)\left(\sum_i w_i/x_i\right)
+ \le \frac{(m+M)^2}{4mM}\left(\sum_i w_i\right)^2,
+ \qquad w_i\ge0.
+\]
+Newman gives an elementary scalar reduction and convexity proof
+\cite{newman}. The exact fixed-weight maximum is also established
+literature: if $W=\sum_i w_i$ and
+$\delta^2=\min_S(\sum_{i\in S}w_i-\sum_{i\notin S}w_i)^2$, then
+\[
+ Q_* = \frac{(m+M)^2 W^2-(M-m)^2\delta^2}{4mM}.
+\]
+This formula appears in Niculescu--Persson, Section 1.4, Exercise 1
+\cite{niculescu}. For equal weights, Lupa\c{s} gives the even/odd correction
+\cite{lupas}. We use these results as historical context and supply
+independent formal proofs; they are not presented as new mathematics.
+
+The question here is quantitative: if an input's product is close to its
+maximum, how close is that input to a maximizing endpoint configuration?
+The distance used below is the ordinary unweighted Euclidean distance on
+the coordinate space. Changing that metric changes the coefficient.
+
+\section{Two weighted points}
+For $p,q>0$, put
+\[
+ Q(x,y)=(px+qy)(p/x+q/y),\qquad
+ Q_*=(p+q)^2+\frac{pq(M-m)^2}{mM}.
+\]
+The maximizing set is $E_2=\{(m,M),(M,m)\}$. Define
+\[
+ d_2^2(x,y)=\min\{(x-m)^2+(y-M)^2,
+                         (x-M)^2+(y-m)^2\}.
+\]
+\begin{theorem}\label{thm:two}
+For every $x,y\in[m,M]$,
+\[
+ Q_*-Q(x,y)\ \ge\ \frac{pq}{mM}\,d_2^2(x,y).
+\]
+The coefficient $pq/(mM)$ is the largest coefficient valid for every
+input in the interval. Moreover, $Q(x,y)=Q_*$ if and only if
+$(x,y)\in E_2$.
+\end{theorem}
+\begin{proof}
+Expansion gives the exact deficit identity
+\[
+ Q_*-Q=\frac{pq}{mM}
+ \left((M-m)^2-\frac{mM(x-y)^2}{xy}\right).
+\]
+By symmetry assume $x\le y$, so
+$d_2^2=(x-m)^2+(M-y)^2$. The numerator of the required scalar inequality
+has the following decomposition:
+\begin{align*}
+ &xy\big((M-m)^2-(x-m)^2-(M-y)^2\big)-mM(y-x)^2\\
+ &\quad=(x-m)(y-x)^2y+2xy(x-m)(y-x)\\
+ &\qquad\quad+(M-y)(y-x)\big(2x^2+(2x-m)(y-x)\big)\\
+ &\qquad\quad+2xy(x-m)(M-y).
+\end{align*}
+Every term is nonnegative. Divide by $xy>0$ and use the deficit identity.
+At $x=y=m$, the distance equals $(M-m)^2>0$ and the deficit equals
+$pq(M-m)^2/(mM)$, proving optimality. The bound forces $d_2^2=0$ for a
+maximizer, and direct evaluation verifies both endpoint pairs.
+\end{proof}
+
+\begin{corollary}
+If $Q_*-Q(x,y)\le\varepsilon$, then
+$d_2^2(x,y)\le mM\varepsilon/(pq)$.
+\end{corollary}
+The inequality itself permits $p=0$ or $q=0$ and $m=M$. The extremizer
+classification and the distance corollary above require positive weights.
+The formal optimal-coefficient statement includes zero weights, in which
+case the optimal coefficient is zero.
+
+Optimality concerns the single coefficient valid on the entire interval.
+We do not assert that squared distance gives the optimal local rate near an
+endpoint maximizer; the distance corollary can be loose in that regime.
+
+\section{Three unweighted points}
+Put
+\[
+ Q(x,y,z)=(x+y+z)(1/x+1/y+1/z),\qquad
+ Q_*=9+\frac{2(M-m)^2}{mM}.
+\]
+Let $E_3$ consist of the six triples with coordinates in $\{m,M\}$ and
+exactly one or exactly two coordinates equal to $M$. Write
+$d_3^2=\dist((x,y,z),E_3)^2$, explicitly the minimum of the six sums of
+squared coordinate differences.
+
+\begin{theorem}\label{thm:three}
+For every $x,y,z\in[m,M]$,
+\[
+ Q_*-Q(x,y,z)\ \ge\ \frac{2}{mM}\,d_3^2(x,y,z).
+\]
+The coefficient $2/(mM)$ is the largest coefficient valid for every
+input in the interval.
+\end{theorem}
+
+\subsection{Complete polynomial-certificate proof}
+Sort the inputs so that $m\le x\le y\le z\le M$. Define
+\begin{align*}
+ N_L={}&xyz\big(2(M-m)^2-2((x-m)^2+(y-m)^2+(M-z)^2)\big)\\
+       &-mM\big((x-y)^2z+(x-z)^2y+(y-z)^2x\big).
+\end{align*}
+Define $N_U$ by replacing $(y-m)^2$ by $(y-M)^2$.
+Exact algebra gives
+\[
+ Q_*-Q-\frac{2}{mM}\big((x-m)^2+(y-m)^2+(M-z)^2\big)
+   =\frac{N_L}{mMxyz},
+\]
+and the analogous identity for $N_U$. Both denominators are positive.
+It is therefore sufficient to prove $N_L\ge0$ when $2y\le m+M$ and
+$N_U\ge0$ when $2y\ge m+M$.
+
+Here is an exhaustive cover of the first region. In each row, all listed
+parameters are nonnegative; the columns give $x,y,z,M$ respectively.
+\begin{center}\small
+\begin{tabular}{@{}cllll@{}}
+\toprule
+ & $x$ & $y$ & $z$ & $M$\\
+\midrule
+0 & $m+a$ & $m+a+t$ & $m+2a+2t+r$ & $m+2a+2t+r+b$\\
+1 & $m+a$ & $m+a+v+t$ & $m+2a+2v+t$ & $m+2a+2v+2t+r$\\
+2 & $m+u+a$ & $m+u+a+t$ & $m+2u+a+t$ & $m+2u+2a+2t+r$\\
+\bottomrule
+\end{tabular}
+\end{center}
+To verify coverage, first test $2y\le z+m$. If true, use row 0 with
+$(a,t,r,b)=(x-m,y-x,z-2y+m,M-z)$. Otherwise test $x-m\le z-y$.
+If true, use row 1 with
+\[
+ (a,v,t,r)=(x-m,z-y-(x-m),2y-z-m,M+m-2y).
+\]
+If false, use row 2 with
+\[
+ (u,a,t,r)=(z-y,x-m-(z-y),y-x,M+m-2y).
+\]
+The interval, ordering, and half-region inequalities prove every parameter
+nonnegative. Substitution reproduces the original four coordinates exactly.
+
+Substituting these three rows into $N_L$ gives positive-coefficient
+polynomials with respectively 66, 71, and 83 monomials. Their complete
+integer-coefficient expressions are supplied in the formal supplement.
+For the upper half, reflect the ordered triple by
+\[
+ (x,y,z)\longmapsto(m+M-z,m+M-y,m+M-x).
+\]
+Substituting the same three rows into the reflected $N_U$ gives
+positive-coefficient polynomials with 89, 107, and 115 monomials.
+Reflection maps the upper half to the lower half, so this also exhausts
+the upper region. Each of the six expansion identities and its positivity
+is checked separately in Lean.
+
+The squared distance $d_3^2$ is no larger than the corresponding squared
+distance used in $N_L$ or $N_U$. This proves the theorem for sorted inputs.
+The product and the six-point distance are permutation invariant; the
+formal proof checks all six orderings, completing the unrestricted case.
+
+Finally, at $x=y=z=m$, the distance is $(M-m)^2$ and the deficit is
+$2(M-m)^2/(mM)$. Thus a larger coefficient is impossible. Endpoint
+evaluation gives $Q(m,m,M)=Q_*$, confirming the asserted maximum.
+
+\section{Verification and scope}
+The accompanying source pins Lean 4.34.0 and mathlib commit
+\begin{center}\small\texttt{5ed2965256430c3649e86755f9576b54eca72435}\end{center}
+The formal source proves Theorems \ref{thm:two} and \ref{thm:three},
+characterizes their best coefficients, and gives the two-point distance
+certificate. The polynomial generator helps discover the certificates.
+The formal checker verifies the resulting identities and their signs;
+it does not trust an external numerical oracle.
+
+Every declared result in the verification record has a complete proof.
+Axiom audits permit only the standard Lean logical axioms
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+Targeted kernel replay checks the saved declarations. This is not a claim
+of verification in a second independent proof assistant, physical-system
+validation, or floating-point numerical error certification.
+
+Exact finite computations suggest a dimension-dependent extension for
+larger unweighted systems. That extension is not proved here and is not
+part of the publication's verified claims.
+
+\subsection{Exact examples}
+For $m=1,M=4$ and unit weights, the following calculations are also
+checked in the formal source. A stability equality can have positive
+distance, so it must not be confused with an objective maximizer.
+\begin{center}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Problem & Input & Squared distance & Deficit\\
+\midrule
+Two points & $(1,1)$ & $9$ & $9/4$\\
+Three points & $(1,1,1)$ & $9$ & $9/2$\\
+Three points & $(1,5/2,4)$ & $9/4$ & $9/8$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Prior-work and publication status}
+The fixed-weight partition formula and the equal-weight parity correction
+are explicitly attributed above. A recent weighted Schweitzer refinement
+\cite{alqahtani} is relevant neighboring work; its accessible HTML omits
+the equations and its full remainder could not be compared. Consequently,
+absence of an exact search match is not evidence of priority for our
+distance estimates. The contribution of this release is a reproducible,
+fully checked development with explicit globally optimal coefficients and finite
+certificates. Editorial acceptance and first-publication novelty have not
+been established.
+
+\begingroup\small\raggedright
+\begin{thebibliography}{9}
+\bibitem{newman} M. Newman, \emph{Kantorovich's inequality},
+Journal of Research of the National Bureau of Standards B 64B (1960),
+33--34. \href{https://nvlpubs.nist.gov/nistpubs/jres/64B/jresv64Bn1p33_A1b.pdf}{Original paper (NIST PDF)}.
+\bibitem{niculescu} C. P. Niculescu and L.-E. Persson,
+\emph{Convex Functions and Their Applications}, manuscript dated
+16 September 2004, Section 1.4, Exercise 1, p. 32.
+\href{https://carmamaths.org/resources/jon/Preprints/Books/CUP/CUPold/np-convex.pdf}{Original manuscript (PDF)}.
+\bibitem{lupas} A. Lupa\c{s}, \emph{A remark on the Schweitzer and
+Kantorovich inequalities}, Publikacije Elektrotehni\v{c}kog Fakulteta,
+Serija Matematika i Fizika (1972), 13--15.
+\href{https://ictp.acad.ro/wp-content/uploads/2025/11/1972-Lupas-Publikacije-A-remark-on-the-Schweitzer-and-Kantorovich-inequalities.pdf}{Source PDF}.
+\bibitem{alqahtani} Alqahtani and M. Z. Sarikaya,
+\emph{Refined Weighted Schweitzer-Type Inequalities With Applications
+to Statistical Moments}, Journal of Mathematics (2026), article 4822611.
+\href{https://doi.org/10.1155/jom/4822611}{doi:10.1155/jom/4822611}.
+\end{thebibliography}
+\endgroup
+\end{document}

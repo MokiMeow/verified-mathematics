@@ -1,0 +1,2 @@
+# Keep the checked bytes and published SHA256 records identical on every OS.
+* -text

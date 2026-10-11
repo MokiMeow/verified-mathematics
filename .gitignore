@@ -1,0 +1,17 @@
+.lake/
+*.olean
+*.ilean
+*.trace
+tmp/
+output/
+runtime/
+*.pdf
+!paper/*.pdf
+*.zip
+*.log
+!evidence/*.log
+householder1960.pdf
+lean-prior-art-search.json
+mathlib-prior-prs.json
+validation.json
+__pycache__/
